@@ -1,0 +1,21 @@
+<h2>Ajouter un Livre</h2>
+
+<form (ngSubmit)="addBook()">
+    <div>
+        <label for="titre">Titre : </label>
+        <input type="text" id="titre" [(ngModel)]="titre" name="titre" required />
+    </div>
+
+    <div>
+        <label for="auteur">Auteur : </label>
+        <input type="text" id="auteur" [(ngModel)]="auteur" name="auteur" required />
+    </div>
+
+    <div>
+        <button type="submit">Ajouter</button>
+    </div>
+</form>
+
+<p *ngIf="message" [ngClass]="{'success-message': message.includes('ajouté'), 'error-message': message.includes('Erreur')}">
+    {{ message }}
+</p>

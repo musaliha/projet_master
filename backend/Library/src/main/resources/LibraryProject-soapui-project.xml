@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="647a5741-8bdb-432a-a2e6-d1562c13b1fa" activeEnvironment="Default" name="LibraryProject" resourceRoot="${projectDir}" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="2836dd9c-239e-4e3d-bb1d-aa85aead15c2" wsaVersion="NONE" name="LibraryPortSoap11" type="wsdl" bindingName="{http://www.lib.com/library/soap}LibraryPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8081/ws/livres.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8081/ws/livres.wsdl"><con:part><con:url>http://localhost:8081/ws/livres.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.lib.com/library/soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.lib.com/library/soap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.lib.com/library/soap">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.lib.com/library/soap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <!--Livre-->
+      <xs:complexType name="Livre">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="titre" type="xs:string"/>
+          <xs:element name="auteur" type="xs:string"/>
+          <xs:element name="disponible" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!--AjouterLivreRequest-->
+      <xs:element name="AjouterLivreRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="auteur" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--AjouterLivreResponse-->
+      <xs:element name="AjouterLivreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="livre" type="tns:Livre"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--ModifierLivreRequest-->
+      <xs:element name="ModifierLivreRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="auteur" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--ModifierLivreResponse-->
+      <xs:element name="ModifierLivreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="livre" type="tns:Livre"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--SupprimerLivreRequest-->
+      <xs:element name="SupprimerLivreRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--SupprimerLivreResponse-->
+      <xs:element name="SupprimerLivreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="resultat" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--PreterLivreRequest-->
+      <xs:element name="PreterLivreRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--PreterLivreResponse-->
+      <xs:element name="PreterLivreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="livre" type="tns:Livre"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--RetournerLivreRequest-->
+      <xs:element name="RetournerLivreRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--RetournerLivreResponse-->
+      <xs:element name="RetournerLivreResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="livre" type="tns:Livre"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RetournerLivreResponse">
+    <wsdl:part element="tns:RetournerLivreResponse" name="RetournerLivreResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PreterLivreResponse">
+    <wsdl:part element="tns:PreterLivreResponse" name="PreterLivreResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RetournerLivreRequest">
+    <wsdl:part element="tns:RetournerLivreRequest" name="RetournerLivreRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SupprimerLivreRequest">
+    <wsdl:part element="tns:SupprimerLivreRequest" name="SupprimerLivreRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ModifierLivreRequest">
+    <wsdl:part element="tns:ModifierLivreRequest" name="ModifierLivreRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ModifierLivreResponse">
+    <wsdl:part element="tns:ModifierLivreResponse" name="ModifierLivreResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SupprimerLivreResponse">
+    <wsdl:part element="tns:SupprimerLivreResponse" name="SupprimerLivreResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AjouterLivreResponse">
+    <wsdl:part element="tns:AjouterLivreResponse" name="AjouterLivreResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AjouterLivreRequest">
+    <wsdl:part element="tns:AjouterLivreRequest" name="AjouterLivreRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PreterLivreRequest">
+    <wsdl:part element="tns:PreterLivreRequest" name="PreterLivreRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LibraryPort">
+    <wsdl:operation name="RetournerLivre">
+      <wsdl:input message="tns:RetournerLivreRequest" name="RetournerLivreRequest"></wsdl:input>
+      <wsdl:output message="tns:RetournerLivreResponse" name="RetournerLivreResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreterLivre">
+      <wsdl:input message="tns:PreterLivreRequest" name="PreterLivreRequest"></wsdl:input>
+      <wsdl:output message="tns:PreterLivreResponse" name="PreterLivreResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerLivre">
+      <wsdl:input message="tns:SupprimerLivreRequest" name="SupprimerLivreRequest"></wsdl:input>
+      <wsdl:output message="tns:SupprimerLivreResponse" name="SupprimerLivreResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierLivre">
+      <wsdl:input message="tns:ModifierLivreRequest" name="ModifierLivreRequest"></wsdl:input>
+      <wsdl:output message="tns:ModifierLivreResponse" name="ModifierLivreResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterLivre">
+      <wsdl:input message="tns:AjouterLivreRequest" name="AjouterLivreRequest"></wsdl:input>
+      <wsdl:output message="tns:AjouterLivreResponse" name="AjouterLivreResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LibraryPortSoap11" type="tns:LibraryPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetournerLivre">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RetournerLivreRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RetournerLivreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreterLivre">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PreterLivreRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PreterLivreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupprimerLivre">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SupprimerLivreRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SupprimerLivreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierLivre">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ModifierLivreRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModifierLivreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjouterLivre">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="AjouterLivreRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AjouterLivreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryPortService">
+    <wsdl:port binding="tns:LibraryPortSoap11" name="LibraryPortSoap11">
+      <soap:address location="http://localhost:8081/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/ws</con:endpoint></con:endpoints><con:operation id="de15bfe0-1ccd-43c5-bf9b-becea7039293" isOneWay="false" action="" name="AjouterLivre" bindingOperationName="AjouterLivre" type="Request-Response" outputName="AjouterLivreResponse" inputName="AjouterLivreRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="05da0d26-d368-4d0e-9d69-a70695e4aae0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:AjouterLivreRequest>\r
+         <soap:titre>Le Petit Prince</soap:titre>\r
+         <soap:auteur>Antoine de Saint-Exépéry</soap:auteur>\r
+      </soap:AjouterLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/AjouterLivreRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7e57ad9e-50ba-4d76-a265-21d16ac5a055" isOneWay="false" action="" name="ModifierLivre" bindingOperationName="ModifierLivre" type="Request-Response" outputName="ModifierLivreResponse" inputName="ModifierLivreRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="893f1d5a-cfbc-427d-aeb3-9eae34b7dc87" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:ModifierLivreRequest>\r
+         <soap:id>?</soap:id>\r
+         <soap:titre>?</soap:titre>\r
+         <soap:auteur>?</soap:auteur>\r
+      </soap:ModifierLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/ModifierLivreRequest"/></con:call></con:operation><con:operation id="5cfbde4a-5975-4b09-9326-f7229cc90bcc" isOneWay="false" action="" name="PreterLivre" bindingOperationName="PreterLivre" type="Request-Response" outputName="PreterLivreResponse" inputName="PreterLivreRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="db8b63a1-d26d-4cbc-9e71-e0cb0ea04465" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:PreterLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:PreterLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/PreterLivreRequest"/></con:call></con:operation><con:operation id="5bffc912-8841-4f22-b2a7-0f44cdd0dc83" isOneWay="false" action="" name="RetournerLivre" bindingOperationName="RetournerLivre" type="Request-Response" outputName="RetournerLivreResponse" inputName="RetournerLivreRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5f5b3a24-fd08-4695-a854-f3b3d3498f7e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:RetournerLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:RetournerLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/RetournerLivreRequest"/></con:call></con:operation><con:operation id="b4294641-48f8-4bda-af0e-3ae3873e3466" isOneWay="false" action="" name="SupprimerLivre" bindingOperationName="SupprimerLivre" type="Request-Response" outputName="SupprimerLivreResponse" inputName="SupprimerLivreRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a0a61dfc-4312-4e37-a148-576017c469f8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:SupprimerLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:SupprimerLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/SupprimerLivreRequest"/></con:call></con:operation></con:interface><con:testSuite id="ec1ab7d9-b325-4a8a-9836-41e03eacb613" name="Library"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="b6297ec8-5999-44c6-8275-d1d1c1527cc8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LibraryPortSoap11 TestSuite" searchProperties="true"><con:settings/><con:testStep type="request" id="f80cd5f6-cce5-4710-9cd2-bf6502b49edf" name="AjouterLivre"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LibraryPortSoap11</con:interface><con:operation>AjouterLivre</con:operation><con:request name="AjouterLivre" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f1c9bd4f-5207-4d60-b39e-da32aacb857a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:AjouterLivreRequest>\r
+         <soap:titre>?</soap:titre>\r
+         <soap:auteur>?</soap:auteur>\r
+      </soap:AjouterLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/AjouterLivreRequest"/></con:request></con:config></con:testStep><con:testStep type="request" id="dbb8a310-e233-4dfd-a596-afe15e5839f3" name="ModifierLivre"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LibraryPortSoap11</con:interface><con:operation>ModifierLivre</con:operation><con:request name="ModifierLivre" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6f192eb7-273b-4a18-bf78-1942b4a97b0b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:ModifierLivreRequest>\r
+         <soap:id>?</soap:id>\r
+         <soap:titre>?</soap:titre>\r
+         <soap:auteur>?</soap:auteur>\r
+      </soap:ModifierLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/ModifierLivreRequest"/></con:request></con:config></con:testStep><con:testStep type="request" id="00d09e4e-712b-4dde-9217-95ca9110dfe4" name="PreterLivre"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LibraryPortSoap11</con:interface><con:operation>PreterLivre</con:operation><con:request name="PreterLivre" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="8e4ff04e-5e0f-463d-95df-7b2e29c24686"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:PreterLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:PreterLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/PreterLivreRequest"/></con:request></con:config></con:testStep><con:testStep type="request" id="f3d4bb60-4c5f-4e62-a09d-f54fc39f9e39" name="RetournerLivre"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LibraryPortSoap11</con:interface><con:operation>RetournerLivre</con:operation><con:request name="RetournerLivre" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="1ce7c1c6-27b0-49fc-bc5c-b5ca029fba6c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:RetournerLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:RetournerLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/RetournerLivreRequest"/></con:request></con:config></con:testStep><con:testStep type="request" id="ab627f67-8874-4388-b72d-9f5232b8409e" name="SupprimerLivre"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LibraryPortSoap11</con:interface><con:operation>SupprimerLivre</con:operation><con:request name="SupprimerLivre" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6f95dacb-36f3-44ef-b10e-d6fadd2d8970"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.lib.com/library/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:SupprimerLivreRequest>\r
+         <soap:id>?</soap:id>\r
+      </soap:SupprimerLivreRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.lib.com/library/soap/LibraryPort/SupprimerLivreRequest"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

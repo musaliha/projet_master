@@ -1,0 +1,3 @@
+INSERT INTO LIVRE (TITRE, AUTEUR, DISPONIBLE) VALUES ('Le Petit Prince', 'Antoine de Saint-Exupéry', TRUE);
+INSERT INTO LIVRE (TITRE, AUTEUR, DISPONIBLE) VALUES ('L’Étranger', 'Albert Camus', TRUE);
+INSERT INTO LIVRE (TITRE, AUTEUR, DISPONIBLE) VALUES ('Les Misérables', 'Victor Hugo', FALSE);
