@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tns="http://example.com/livre">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tns:supprimerLivre>
+            <tns:livreID>1</tns:livreID>
+        </tns:supprimerLivre>
+    </soapenv:Body>
+</soapenv:Envelope>

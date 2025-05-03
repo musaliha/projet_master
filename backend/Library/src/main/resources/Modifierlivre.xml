@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:tns="http://example.com/livre">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <tns:modifierLivre>
+            <tns:livreID>1</tns:livreID>
+            <tns:livre>
+                <tns:titre>Nouveau Titre</tns:titre>
+                <tns:auteur>Nouveau Auteur</tns:auteur>
+                <tns:isbn>978-3-16-148410-1</tns:isbn>
+            </tns:livre>
+        </tns:modifierLivre>
+    </soapenv:Body>
+</soapenv:Envelope>
